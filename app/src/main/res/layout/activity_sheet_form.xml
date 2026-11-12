@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2F2F2F"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvFormTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Criar Ficha de Personagem"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- Mandatory Field: Character Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCharName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do Personagem *"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCharName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFD600" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Mandatory Pre-selected Dropdown: RPG System -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilRpgSystem"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Sistema de RPG *"
+            android:textColorHint="#FFD600"
+            app:boxStrokeColor="#FFD600"
+            app:endIconTint="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteRpgSystem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Optional Custom RPG System if 'Outro' selected -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCustomRpgSystem"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Especifique o Sistema de RPG"
+            android:textColorHint="#FFD600"
+            android:visibility="gone"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCustomRpgSystem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Pre-selected Dropdowns: Gender & Play Style -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilGender"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Gênero"
+                android:textColorHint="#FFD600"
+                app:boxStrokeColor="#FFD600"
+                app:endIconTint="#FFD600"
+                app:hintTextColor="#FFD600">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPlayStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:hint="Estilo de Jogo"
+                android:textColorHint="#FFD600"
+                app:boxStrokeColor="#FFD600"
+                app:endIconTint="#FFD600"
+                app:hintTextColor="#FFD600">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompletePlayStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Custom Gender input if 'Outro' selected -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCustomGender"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Especifique o Gênero (ex: Neutro, Não-Binário...)"
+            android:textColorHint="#FFD600"
+            android:visibility="gone"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCustomGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Character Image Section (Gallery Picker or URL) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <ImageView
+                android:id="@+id/ivFormImagePreview"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Pré-visualização da imagem do personagem"
+                android:background="#1E1E1E"
+                android:src="@drawable/ic_nexus_logo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPickImage"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Escolher Imagem da Galeria"
+                android:textColor="#D0BCFF"
+                app:strokeColor="#D0BCFF"
+                app:cornerRadius="12dp" />
+        </LinearLayout>
+
+        <!-- Image URL -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilImageUrl"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Ou insira a URL da imagem (opcional)"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Public Switch (RF07) -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchPublic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:text="Tornar ficha pública (visível na pesquisa)"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:useMaterialThemeColors="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="16dp"
+            android:background="#333333" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Detalhes do Personagem"
+            android:textColor="#FFD600"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Resources -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilResources"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recursos (PV, Mana, Sanidade...)"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etResources"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Attributes -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAttributes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Atributos (Força, Destreza...)"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAttributes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Skills -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSkills"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Habilidades / Perícias"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSkills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Equipment -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilEquipment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Equipamentos e Itens"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEquipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="2"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Notes -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNotes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Anotações / História"
+            android:textColorHint="#FFD600"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="#FFD600"
+            app:hintTextColor="#FFD600">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine|textCapSentences"
+                android:minLines="3"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Save Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveSheet"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:text="Salvar Ficha"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:backgroundTint="#6750A4"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

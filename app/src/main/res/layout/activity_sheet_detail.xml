@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#2F2F2F">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/ivDetailPortrait"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Retrato do personagem"
+                android:background="#2C2C2C"
+                android:src="@drawable/ic_nexus_logo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="16dp">
+
+                <TextView
+                    android:id="@+id/tvDetailCharName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do Personagem"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#E6E1E5" />
+
+                <TextView
+                    android:id="@+id/tvDetailRpgSystem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sistema de RPG"
+                    android:textSize="16sp"
+                    android:textColor="#D0BCFF"
+                    android:textStyle="italic"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:id="@+id/tvDetailOwner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Criado por: ..."
+                    android:textSize="13sp"
+                    android:textColor="#938F96"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/tvDetailGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gênero: -"
+                android:textSize="13sp"
+                android:textColor="#CAC4D0"
+                android:background="#2B2930"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+
+            <TextView
+                android:id="@+id/tvDetailPlayStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estilo: -"
+                android:textSize="13sp"
+                android:textColor="#CAC4D0"
+                android:background="#2B2930"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+
+            <TextView
+                android:id="@+id/tvDetailPrivacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pública"
+                android:textSize="13sp"
+                android:textColor="#81C784"
+                android:textStyle="bold"
+                android:background="#1B381E"
+                android:layout_marginStart="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#333333"
+            android:layout_marginVertical="20dp" />
+
+        <!-- Resources Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recursos"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF" />
+
+        <TextView
+            android:id="@+id/tvDetailResources"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PV, MP, Sanidade..."
+            android:textColor="#E6E1E5"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Attributes Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atributos"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF" />
+
+        <TextView
+            android:id="@+id/tvDetailAttributes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valores de atributos..."
+            android:textColor="#E6E1E5"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Skills Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Habilidades e Perícias"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF" />
+
+        <TextView
+            android:id="@+id/tvDetailSkills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lista de perícias..."
+            android:textColor="#E6E1E5"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Equipment Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Equipamentos"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF" />
+
+        <TextView
+            android:id="@+id/tvDetailEquipment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Itens e armas..."
+            android:textColor="#E6E1E5"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Notes Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anotações Gerais"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D0BCFF" />
+
+        <TextView
+            android:id="@+id/tvDetailNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="História e anotações adicionais..."
+            android:textColor="#E6E1E5"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Action Buttons Layout (Owner or Admin only) -->
+        <LinearLayout
+            android:id="@+id/layoutOwnerActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditSheet"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:textColor="#D0BCFF"
+                app:strokeColor="#D0BCFF"
+                app:cornerRadius="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteSheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Excluir Ficha"
+                app:backgroundTint="#B3261E"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

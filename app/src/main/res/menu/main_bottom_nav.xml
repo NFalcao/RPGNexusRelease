@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_public"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Públicas" />
+
+    <item
+        android:id="@+id/nav_my_sheets"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Minhas Fichas" />
+
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Admin" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Perfil" />
+</menu>

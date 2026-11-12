@@ -1,0 +1,64 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.rpgnexus'
+    compileSdk {
+        version = release(37)
+    }
+
+    defaultConfig {
+        applicationId "com.example.rpgnexus"
+        minSdk 24
+        targetSdk 37
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            optimization {
+                enable false
+            }
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+        encoding 'UTF-8'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    // Firebase BoM (gerencia as versões das bibliotecas automaticamente)
+    implementation platform('com.google.firebase:firebase-bom:35.1.0')
+
+    // Autenticação na Nuvem
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Banco de Dados Firestore na Nuvem
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Armazenamento de Imagens
+    implementation 'com.google.firebase:firebase-storage'
+    implementation libs.activity.ktx
+    implementation libs.appcompat
+    implementation libs.constraintlayout
+    implementation libs.material
+    implementation libs.glide
+    implementation libs.gson
+    testImplementation libs.junit
+    androidTestImplementation libs.espresso.core
+    androidTestImplementation libs.ext.junit
+}

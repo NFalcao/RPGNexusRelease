@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode -->
+    <style name="Base.Theme.RPGNexus" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_primary_variant</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/purple_secondary</item>
+        <item name="colorSecondaryVariant">@color/purple_secondary</item>
+        <item name="colorOnSecondary">@color/background_dark</item>
+
+        <!-- Status bar and window background -->
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="editTextColor">@color/text_primary</item>
+
+        <!-- AlertDialog themes for dark background -->
+        <item name="alertDialogTheme">@style/DarkAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/DarkAlertDialog</item>
+    </style>
+
+    <style name="DarkAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">#1E1E1E</item>
+        <item name="colorSurface">#1E1E1E</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#CAC4D0</item>
+        <item name="colorPrimary">#D0BCFF</item>
+    </style>
+
+    <style name="Theme.RPGNexus" parent="Base.Theme.RPGNexus" />
+</resources>

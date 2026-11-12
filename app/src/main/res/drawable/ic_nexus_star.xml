@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Purple Shield Polygon Outline -->
+    <path
+        android:fillColor="#4A148C"
+        android:pathData="M 50,15 L 88,32 L 95,58 L 78,85 L 50,96 L 22,85 L 5,58 L 12,32 Z" />
+
+    <!-- Purple Shield Inner Fill -->
+    <path
+        android:fillColor="#9C27B0"
+        android:pathData="M 50,18 L 85,34 L 92,57 L 76,82 L 50,93 L 24,82 L 8,57 L 15,34 Z" />
+
+    <!-- 3D Yellow 'N' Outer Border -->
+    <path
+        android:fillColor="#805C00"
+        android:pathData="M 20,20 C 30,12 40,12 42,24 L 42,48 L 62,18 C 72,10 82,12 82,26 L 82,64 C 82,74 72,76 62,72 L 62,42 L 42,72 C 32,80 20,74 20,60 Z" />
+
+    <!-- 3D Yellow 'N' Inner Fill -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M 23,23 C 31,16 38,16 40,26 L 40,46 L 61,19 C 70,12 79,14 79,27 L 79,62 C 79,71 70,73 61,69 L 61,40 L 40,70 C 31,77 23,72 23,58 Z" />
+
+    <!-- 'Nexus' Text Path at Bottom -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M 30,76 L 33,76 L 36,81 L 36,76 L 38,76 L 38,85 L 35,85 L 32,80 L 32,85 L 30,85 Z M 40,81 C 40,78 44,78 44,81 L 40,81 Z M 40,82 C 40,85 45,85 45,82 L 43,82 C 43,83 42,83 41,83 C 41,82 41,82 41,82 L 45,82 L 45,81 C 45,78 39,78 39,81 C 39,85 45,85 45,82 Z M 47,81 L 49,83 L 51,81 L 49,79 Z M 48,85 L 50,85 L 52,85 Z M 54,79 L 54,83 C 54,86 58,86 58,83 L 58,79 L 56,79 L 56,83 C 56,84 56,84 56,84 C 56,84 56,84 56,83 L 56,79 Z M 60,84 C 60,85 64,85 64,84 L 62,84 C 62,84 61,84 61,84 C 61,83 62,83 63,82 C 64,81 64,80 63,80 C 62,79 59,80 60,81 L 61,81 C 61,81 62,81 62,81 C 62,81 61,81 60,82 C 59,83 59,84 60,84 Z" />
+</vector>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2F2F2F">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fichas Públicas"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:hint="Pesquisar personagem ou sistema..."
+        android:textColorHint="#FFD600"
+        app:startIconDrawable="@android:drawable/ic_menu_search"
+        app:startIconTint="#FFD600"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#FFD600"
+        app:hintTextColor="#FFD600"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearchQuery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFD600"
+            android:imeOptions="actionSearch"
+            android:inputType="textCapSentences" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Filters Header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="▼ FILTROS DE PESQUISA"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#FFD600"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp" />
+
+    <!-- Filters Row (Exposed Dropdown Menus with Arrow Indicators & High Contrast Labels) -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingHorizontal="12dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- System Filter -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:hint="Sistema de RPG"
+                android:textColorHint="#FFD600"
+                app:boxStrokeColor="#FFD600"
+                app:hintTextColor="#FFD600"
+                app:endIconTint="#FFD600">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteSystemFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:paddingVertical="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Play Style Filter -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:hint="Estilo de Jogo"
+                android:textColorHint="#FFD600"
+                app:boxStrokeColor="#FFD600"
+                app:hintTextColor="#FFD600"
+                app:endIconTint="#FFD600">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteStyleFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:paddingVertical="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Gender Filter -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:hint="Gênero"
+                android:textColorHint="#FFD600"
+                app:boxStrokeColor="#FFD600"
+                app:hintTextColor="#FFD600"
+                app:endIconTint="#FFD600">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteGenderFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:paddingVertical="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPublicSheets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvEmptyPublicSheets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Nenhuma ficha encontrada com esses critérios."
+            android:textColor="#CAC4D0"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+</LinearLayout>
